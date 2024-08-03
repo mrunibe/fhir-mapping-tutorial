@@ -1,0 +1,47 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ReferenceRange",
+  "url": "http://research.balgrist.ch/fhir2sphn/StructureDefinition/ReferenceRange",
+  "name": "ReferenceRange",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://research.balgrist.ch/fhir2sphn/StructureDefinition/ReferenceRange",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "ReferenceRange",
+        "path": "ReferenceRange",
+        "short": "ReferenceRange",
+        "definition": "ReferenceRange"
+      },
+      {
+        "id": "ReferenceRange.lowerLimit",
+        "path": "ReferenceRange.lowerLimit",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "ReferenceRange.upperLimit",
+        "path": "ReferenceRange.upperLimit",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "decimal"
+          }
+        ],
+        "isSummary": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+map "http://research.balgrist.ch/fhir2sphn/StructureMap/Demo-Choice" = "Demo-Choice"
+
+uses "http://hl7.org/fhir/StructureDefinition/Observation" alias Observation as source
+uses "http://research.balgrist.ch/fhir2sphn/StructureDefinition/LabResult" alias LabResult as target
+uses "http://research.balgrist.ch/fhir2sphn/StructureDefinition/ReferenceRange" alias ReferenceRange as target
+uses "http://research.balgrist.ch/fhir2sphn/StructureDefinition/ReferenceValue" alias ReferenceValue as target
+
+
+group observation2lab(source src : Observation, target tgt : LabResult) {
+  src.value as vq -> tgt.id = uuid() then {
+    vq.value as v -> tgt.value = v;
+  };
+
+  src.referenceRange as ref then {
+    // Error: "Unable to find type ReferenceRange for element numericalReferenceReferenceRange with path LabResult.numericalReference[x]""
+    ref.low as low -> tgt.numericalReference = create('ReferenceRange') as refRange then {
+      low.value as v -> refRange.lowerLimit = v;
+    };
+  };
+}

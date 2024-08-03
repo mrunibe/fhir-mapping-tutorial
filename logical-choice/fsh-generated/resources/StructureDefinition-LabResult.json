@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "LabResult",
+  "url": "http://research.balgrist.ch/fhir2sphn/StructureDefinition/LabResult",
+  "name": "LabResult",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://research.balgrist.ch/fhir2sphn/StructureDefinition/LabResult",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "LabResult",
+        "path": "LabResult",
+        "short": "LabResult",
+        "definition": "LabResult"
+      },
+      {
+        "id": "LabResult.value[x]",
+        "path": "LabResult.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          },
+          {
+            "code": "decimal"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "LabResult.numericalReference[x]",
+        "path": "LabResult.numericalReference[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "http://research.balgrist.ch/fhir2sphn/StructureDefinition/ReferenceValue"
+          },
+          {
+            "code": "http://research.balgrist.ch/fhir2sphn/StructureDefinition/ReferenceRange"
+          }
+        ],
+        "isSummary": true
+      }
+    ]
+  }
+}

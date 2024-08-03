@@ -1,0 +1,16 @@
+{
+	"resourceType": "Observation",
+	"valueQuantity": {
+		"value": 4.0
+    },
+	"referenceRange": [
+	{
+		"low": {
+			"value": 3.5
+		},
+		"high": {
+			"value": 5.0
+		}
+	}
+	]
+}

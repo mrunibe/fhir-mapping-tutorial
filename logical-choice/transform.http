@@ -1,0 +1,39 @@
+@host = http://localhost:8080/matchboxv3/fhir
+
+### SD ReferenceValue
+POST {{host}}/StructureDefinition HTTP/1.1
+Accept: application/fhir+json;fhirVersion=4.0
+Content-Type: application/fhir+json;fhirVersion=4.0
+
+< ./fsh-generated/resources/StructureDefinition-ReferenceValue.json
+
+### SD ReferenceRange
+POST {{host}}/StructureDefinition HTTP/1.1
+Accept: application/fhir+json;fhirVersion=4.0
+Content-Type: application/fhir+json;fhirVersion=4.0
+
+< ./fsh-generated/resources/StructureDefinition-ReferenceRange.json
+
+
+### SD LabResult
+POST {{host}}/StructureDefinition HTTP/1.1
+Accept: application/fhir+json;fhirVersion=4.0
+Content-Type: application/fhir+json;fhirVersion=4.0
+
+< ./fsh-generated/resources/StructureDefinition-LabResult.json
+
+
+### Compile
+POST {{host}}/StructureMap HTTP/1.1
+Accept: application/fhir+json;fhirVersion=4.0
+Content-Type: text/fhir-mapping
+
+< ./demo.map
+
+
+### Transform
+POST {{host}}/StructureMap/$transform?source=http://research.balgrist.ch/fhir2sphn/StructureMap/Demo-Choice
+Accept: application/fhir+json;fhirVersion=4.0
+Content-Type: application/fhir+json;fhirVersion=4.0
+
+< ./sample.json

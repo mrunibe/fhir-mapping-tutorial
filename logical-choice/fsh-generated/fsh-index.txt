@@ -1,0 +1,4 @@
+Output File                              Name            Type     FSH File          Lines
+StructureDefinition-LabResult.json       LabResult       Logical  LogicalModel.fsh  11 - 14
+StructureDefinition-ReferenceRange.json  ReferenceRange  Logical  LogicalModel.fsh  6 - 9
+StructureDefinition-ReferenceValue.json  ReferenceValue  Logical  LogicalModel.fsh  2 - 4
