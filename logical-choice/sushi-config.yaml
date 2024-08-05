@@ -2,6 +2,11 @@ id: ch.balgrist.research.fhir2sphn
 canonical: http://research.balgrist.ch/fhir2sphn
 name: LOOP_FHIR2SPHN
 status: draft
+version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2024+
 releaseLabel: ci-build
+
+menu:
+  Home: index.html
+  Artifacts: artifacts.html

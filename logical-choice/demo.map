@@ -13,7 +13,7 @@ group observation2lab(source src : Observation, target tgt : LabResult) {
 
   src.referenceRange as ref then {
     // Error: "Unable to find type ReferenceRange for element numericalReferenceReferenceRange with path LabResult.numericalReference[x]""
-    ref.low as low -> tgt.numericalReference = create('ReferenceRange') as refRange then {
+    ref.low as low -> tgt.numericalReferenceRange = create('ReferenceRange') as refRange then {
       low.value as v -> refRange.lowerLimit = v;
     };
   };
